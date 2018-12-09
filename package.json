@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --r html -r lcov -r text mocha ./test/**/*.js ",
+    "test:coverage": "nyc --r html -r lcov -r text mocha ./test/**/*.js ",
+    "test": "mocha ./test/**/*.js",
     "lint": "eslint ./lib --fix"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
-      "pre-push": "npm run test"
+      "pre-push": "npm run test:coverage"
     }
   },
   "keywords": [],
