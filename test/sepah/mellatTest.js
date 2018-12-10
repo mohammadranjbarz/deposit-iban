@@ -16,10 +16,10 @@ describe('testing isIbanFromSepah(iban) function ', function() {
     });
 });
 
-describe('testing convertMellatDepositToIban(deposit) function ', function() {
-    it('Should calculate iban correctly', () => {
-        const deposit = '4168450796'
-        const iban = 'IR690120010000004168450796'
-        assert.equal(mellat.convertDepositToIban(deposit), iban);
-    });
-});
+// describe('testing convertMellatDepositToIban(deposit) function ', function() {
+//     it('Should calculate iban correctly', () => {
+//         const deposit = '4168450796'
+//         const iban = 'IR690120010000004168450796'
+//         assert.equal(mellat.convertDepositToIban(deposit), iban);
+//     });
+// });
