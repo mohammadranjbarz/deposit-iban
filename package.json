@@ -4,30 +4,35 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rm -rf ./dist/* && tsc ",
     "test:coverage": "nyc --r html -r lcov -r text mocha ./test/**/*.js ",
-    "test": "mocha ./test/**/*.js",
-    "lint": "eslint ./lib --fix"
+    "test": "npm run build && mocha ./test/**/*.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "",
       "pre-push": "npm run test:coverage"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammadranjbar/deposit-iban.git"
+  },
   "keywords": [],
-  "author": "",
+  "homepage": "https://github.com/mohammadranjbar/deposit-iban#readme",
+  "author": "Mohammd Ranjbar <mranjbar.z2993@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "big-integer": "^1.6.40"
   },
   "devDependencies": {
+    "@types/node": "^10.12.12",
     "chai": "^4.2.0",
-    "eslint": "^5.10.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
     "husky": "^1.2.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
-    "nyc": "^13.1.0"
+    "nyc": "^13.1.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
   }
 }

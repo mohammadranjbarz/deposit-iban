@@ -1,4 +1,4 @@
-const saman = require('../../lib/deposit-to-iban').saman
+const saman = require('../../dist/index').saman
 const assert = require('chai').assert
 
 describe('testing convertDepositToIban(deposit) saman ', function() {
