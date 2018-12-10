@@ -13,7 +13,7 @@ describe('testing convertSepahDepositToIban(deposit) function ', function() {
 describe('testing isIbanFromSepah(iban) function ', function() {
   it('should return true', () => {
     const iban = 'IR840150000001426304971108'
-    assert.equal( sepah.isIbanFromSepah(iban), true);
+    assert.equal( sepah.isIbanFromThisBank(iban), true);
   });
 
 
