@@ -10,7 +10,6 @@ npm install deposit-iban  --save
 
 ```
 ## Usage
-## Usage
 ### Javascript
 ```javascript
 var depositIban = require('deposit-iban');
@@ -18,7 +17,7 @@ var iban = depositIban.sepah.convertDepositToIban('1177301920207');
 console.log('iban : ',iban)
 var deposit = depositIban.sepah.convertIbanToDeposit('IR240150000001177301920207')
 console.log('deposit : ',deposit)
-var isValidIban = depositIban.util.isIbanValid('IR240150000001177301920207')
+var isValidIban = depositIban.util.isValidIban('IR240150000001177301920207')
 console.log('isValidIban : ',isValidIban)
 
 ```
@@ -35,7 +34,7 @@ const iban = sepah.convertDepositToIban('1177301920207');
 console.log('iban : ',iban)
 const deposit = sepah.convertIbanToDeposit('IR240150000001177301920207')
 console.log('deposit : ',deposit)
-const isValidIban = util.isIbanValid('IR240150000001177301920207')
+const isValidIban = util.isValidIban('IR240150000001177301920207')
 console.log('isValidIban : ',isValidIban)
 ```
 ```sh

@@ -1,5 +1,5 @@
 import * as utils from '../utils'
-import {bankCodes, isSourceOfIbanIsValid} from '../utils'
+import {bankCodes, checkIbanSourceBank} from '../utils'
 import {Bank} from './Bank'
 
 export class Sepah extends Bank{
@@ -38,7 +38,7 @@ export class Sepah extends Bank{
 
     }
     isIbanFromThisBank(iban: string): boolean {
-        return  this.isIbanValid(iban) && isSourceOfIbanIsValid(iban, bankCodes.SEPAH_CODE);
+        return  this.isValidIban(iban) && checkIbanSourceBank(iban, bankCodes.SEPAH_CODE);
 
     }
 }

@@ -1,5 +1,5 @@
 import * as utils from '../utils'
-import {isSourceOfIbanIsValid} from '../utils'
+import {checkIbanSourceBank} from '../utils'
 import {Bank} from './Bank'
 
 // Karafarin, Sanat Madan, Kar afarin, Keshavarzi, Ayande
@@ -21,7 +21,7 @@ export class Type2 extends Bank{
     return utils.generateIbanFromBban(bban);
   }
   isIbanFromThisBank(iban: string): boolean {
-    return  this.isIbanValid(iban) && isSourceOfIbanIsValid(iban, this.bankCode);
+    return  this.isValidIban(iban) && checkIbanSourceBank(iban, this.bankCode);
   }
 
   convertIbanToDeposit(iban: string): string{

@@ -44,6 +44,6 @@ export const bankCodes = {
   KESHAVARZI: '016',
 };
 
-export function isSourceOfIbanIsValid(iban: string, bankCode: string): boolean {
+export function checkIbanSourceBank(iban: string, bankCode: string): boolean {
   return Boolean(bankCode === iban.substring(4, 7));
 }

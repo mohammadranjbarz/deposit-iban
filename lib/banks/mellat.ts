@@ -1,5 +1,5 @@
 import * as utils from '../utils'
-import {bankCodes, isSourceOfIbanIsValid} from '../utils'
+import {bankCodes, checkIbanSourceBank} from '../utils'
 import {Bank} from './Bank'
 
 export class Mellat extends Bank{
@@ -25,7 +25,7 @@ export class Mellat extends Bank{
     }
 
     isIbanFromThisBank(iban: string): boolean {
-        return  this.isIbanValid(iban) && isSourceOfIbanIsValid(iban, bankCodes.MELLAT_CODE);
+        return  this.isValidIban(iban) && checkIbanSourceBank(iban, bankCodes.MELLAT_CODE);
     }
 }
 
