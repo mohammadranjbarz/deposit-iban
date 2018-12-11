@@ -1,5 +1,5 @@
 const assert = require('assert');
-const general = require('../../lib/deposit-to-iban').general
+const general = require('../../dist/index').general
 
 
 

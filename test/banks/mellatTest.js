@@ -1,5 +1,5 @@
 const assert = require('assert');
-const mellat = require('../../lib/deposit-to-iban').mellat
+const mellat = require('../../dist/index').mellat
 
 
 

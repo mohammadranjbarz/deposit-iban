@@ -1,16 +1,16 @@
 const bigInt = require('big-integer');
 
-function addPadString(originalString, padString, length) {
+export function addPadString(originalString:string, padString:string, length:number):string {
   let newString = originalString;
   while (newString.length < length) { newString = padString + newString; }
   return newString;
 }
 
-function generateBbanForStandardDepositNumbers(deposit, bankCode) {
+export function generateBbanForStandardDepositNumbers(deposit:string, bankCode:string):string {
   return `${bankCode}${addPadString(deposit, '0', 19)}182700`;
 }
 
-function generateIbanFromBban(bban) {
+export function generateIbanFromBban(bban:string) :string{
   const checkDigitBigInt = bigInt(bban);
   console.log('checkDigitBigInt : ', checkDigitBigInt.toString());
 
@@ -20,7 +20,7 @@ function generateIbanFromBban(bban) {
   return `IR${checkDigit}0${bban.substring(0, bban.length - 6)}`;
 }
 
-function isCheckSumValid(iban) {
+export function isIbanValid(iban:string) :boolean {
   const checkSum = iban.substring(2, 4);
   const bban = `${iban.substring(5, iban.length)}182700`;
   const checkDigitBigInt = bigInt(bban);
@@ -28,9 +28,3 @@ function isCheckSumValid(iban) {
   return String(checkDigitNumber) === checkSum;
 }
 
-module.exports = {
-  addPadString,
-  generateIbanFromBban,
-  generateBbanForStandardDepositNumbers,
-  isCheckSumValid,
-};
