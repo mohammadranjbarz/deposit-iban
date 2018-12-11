@@ -1,9 +1,9 @@
-import * as general from '../general'
 import * as utils from '../utils'
+import {bankCodes, isSourceOfIbanIsValid} from '../utils'
 
 export class Mellat {
     convertDepositToIban(deposit: string): string {
-        let bankCode = general.bankCodes.MELLAT_CODE;
+        let bankCode = bankCodes.MELLAT_CODE;
         // @ts-ignore:
         if (bankCode.startsWith('0')) {
             bankCode = bankCode.replace('0', '');
@@ -22,7 +22,7 @@ export class Mellat {
     }
 
     isIbanFromThisBank(iban: string): boolean {
-        return general.isSourceOfIbanIsValid(iban, general.bankCodes.MELLAT_CODE);
+        return isSourceOfIbanIsValid(iban, bankCodes.MELLAT_CODE);
     }
 }
 

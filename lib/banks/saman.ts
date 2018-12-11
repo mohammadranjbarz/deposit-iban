@@ -1,5 +1,5 @@
-import * as general from '../general'
 import * as utils from '../utils'
+import {isSourceOfIbanIsValid} from '../utils'
 
 export class Saman {
     bankCode: string
@@ -33,6 +33,6 @@ export class Saman {
     isIbanFromThisBank(iban: string) : boolean {
         console.log('iban : ', iban);
         console.log('bankCode : ', this.bankCode);
-        return general.isSourceOfIbanIsValid(iban, this.bankCode);
+        return isSourceOfIbanIsValid(iban, this.bankCode);
     }
 };

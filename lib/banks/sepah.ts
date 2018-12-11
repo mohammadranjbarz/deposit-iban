@@ -1,8 +1,9 @@
-import * as general from '../general'
 import * as utils from '../utils'
+import {bankCodes, isSourceOfIbanIsValid} from '../utils'
+
 export class Sepah {
     convertDepositToIban(deposit: string): string {
-        let bankCode = general.bankCodes.SEPAH_CODE;
+        let bankCode = bankCodes.SEPAH_CODE;
         // @ts-ignore:
         if (bankCode.startsWith('0')) {
             bankCode = bankCode.replace('0', '');
@@ -21,7 +22,7 @@ export class Sepah {
     }
 
     isIbanFromThisBank(iban: string): boolean {
-        return general.isSourceOfIbanIsValid(iban, general.bankCodes.SEPAH_CODE);
+        return isSourceOfIbanIsValid(iban, bankCodes.SEPAH_CODE);
 
     }
 }
