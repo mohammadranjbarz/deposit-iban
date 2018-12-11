@@ -23,7 +23,7 @@ console.log('isValidIban : ',isValidIban)
 
 ```
 ```sh
-Output should be : IR240150000001177301920207
+Output should be : 
 iban : IR240150000001177301920207
 deposit : 1177301920207
 isValidIban : true
@@ -39,7 +39,7 @@ const isValidIban = util.isIbanValid('IR240150000001177301920207')
 console.log('isValidIban : ',isValidIban)
 ```
 ```sh
-Output should be : IR240150000001177301920207
+Output should be : 
 iban : IR240150000001177301920207
 deposit : 1177301920207
 isValidIban : true
