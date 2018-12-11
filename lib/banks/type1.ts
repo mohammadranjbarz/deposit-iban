@@ -1,7 +1,7 @@
 import * as utils from '../utils'
 import {checkIbanSourceBank} from '../utils'
 import {Bank} from './Bank'
-import {isIbanValid} from "../utils";
+import {isValidIban} from "../utils";
 
 
 // Saman, Sarmaye, Etebari Tosee, Sina

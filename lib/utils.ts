@@ -20,7 +20,7 @@ export function generateIbanFromBban(bban:string) :string{
   return `IR${checkDigit}0${bban.substring(0, bban.length - 6)}`;
 }
 
-export function isIbanValid(iban:string) :boolean {
+export function isValidIban(iban:string) :boolean {
   if ((!iban.startsWith('IR') && !iban.startsWith('ir') )|| iban.length != 26)return false
   const checkSum = iban.substring(2, 4);
   const bban = `${iban.substring(5, iban.length)}182700`;

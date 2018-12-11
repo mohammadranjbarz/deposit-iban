@@ -1,4 +1,4 @@
-import {isIbanValid} from '../utils'
+import {isValidIban} from '../utils'
 
 export abstract class Bank {
   bankCode: string
@@ -11,7 +11,7 @@ export abstract class Bank {
   // abstract convertIbanToDeposit(iban: string): string
   // abstract convertIbanToDeposit(iban: string): string
   public isValidIban (iban :string):boolean{
-    return  isIbanValid(iban)
+    return  isValidIban(iban)
   }
 
   public getBankCode():string{
