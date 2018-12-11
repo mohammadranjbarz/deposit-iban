@@ -37,6 +37,10 @@ export const bankCodes = {
   SARMAYE: '058',
   SINA: '055',
   ETEBARI_TOVSE: '051',
+  TOSEE_SADERAT: '020',
+  SANAT_MADAN: '011',
+  KAR_AFARIN: '053',
+  KESHAVARZI: '016',
 };
 
 export function isSourceOfIbanIsValid(iban: string, bankCode: string): boolean {

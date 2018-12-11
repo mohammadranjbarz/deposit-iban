@@ -1,10 +1,14 @@
 import * as utils from '../utils'
 import {isSourceOfIbanIsValid} from '../utils'
+import {Bank} from './Bank'
 
-export class Saman {
+
+// Saman, Sarmaye, Etebari Tosee, Sina
+export class Type1 extends Bank{
   bankCode: string
 
   public constructor(bankCode: string) {
+    super(bankCode)
     this.bankCode = bankCode;
   }
 
