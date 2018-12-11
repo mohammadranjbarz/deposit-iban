@@ -27,4 +27,8 @@ describe('testing convertMellatDepositToIban(deposit) function ', function() {
         const iban = 'IR040120010000003688933533'
         assert.equal(mellat.convertDepositToIban(deposit), iban);
     });
+    it('Should calculate iban correctly', () => {
+        const deposit = '400-699-3167'
+        assert.throws(mellat.convertDepositToIban.bind(mellat, deposit));
+    });
 });

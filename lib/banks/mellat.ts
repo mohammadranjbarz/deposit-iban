@@ -16,12 +16,8 @@ export class Mellat extends Bank{
             formattedBankCode = formattedBankCode.replace('0', '');
         }
         let bban;
-        if (deposit.indexOf('-') > -1) {
-            const parts = deposit.split('-');
-            const part0 = utils.addPadString(parts[0], '0', 8);
-            const part1 = utils.addPadString(parts[0], '0', 10);
-            const originalAccount = part0 + part1;
-            bban = `${formattedBankCode}1${originalAccount}182700`;
+        if (deposit.includes('-') ) {
+            throw "فقط تبدیل حساب متمرکز ملت ممکن است"
         } else {
             bban = `${formattedBankCode}001${utils.addPadString(deposit, '0', 16)}182700`
         }

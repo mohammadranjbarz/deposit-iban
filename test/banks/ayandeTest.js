@@ -28,3 +28,11 @@ describe('testing convertDepositToIban(deposit) ayande ', function() {
     //   assert.equal(ayande.convertDepositToIban(deposit), iban);
     // });
 });
+
+describe('testing convertIbanToDeposit(deposit) ayande ', function() {
+    it('Should calculate deposit correctly', () => {
+        const deposit = '0202102329006'
+        const iban = 'IR820620000000202102329006'
+        assert.equal(ayande.convertIbanToDeposit(iban), deposit);
+    });
+});

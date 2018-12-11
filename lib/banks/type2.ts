@@ -24,7 +24,7 @@ export class Type2 extends Bank{
     return  this.isIbanValid(iban) && isSourceOfIbanIsValid(iban, this.bankCode);
   }
 
-  // convertIbanToDeposit(iban: string): string{
-  //
-  // }
+  convertIbanToDeposit(iban: string): string{
+        return iban.substring(13,26)
+  }
 };

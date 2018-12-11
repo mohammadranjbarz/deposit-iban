@@ -22,9 +22,12 @@ describe('testing convertDepositToIban(deposit) karafarin ', function() {
     const iban = 'IR950530000002400402064606'
     assert.equal(karafarin.convertDepositToIban(deposit), iban);
   });
-  // it('Should calculate iban correctly', () => {
-  //   const deposit = '3688933533'
-  //   const iban = 'IR040120010000003688933533'
-  //   assert.equal(karafarin.convertDepositToIban(deposit), iban);
-  // });
+});
+
+describe('testing convertIbanToDeposit(deposit) karafarin ', function() {
+  it('Should calculate deposit correctly', () => {
+    const deposit = '2400402064606'
+    const iban = 'IR950530000002400402064606'
+    assert.equal(karafarin.convertIbanToDeposit(iban), deposit);
+  });
 });

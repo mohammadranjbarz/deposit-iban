@@ -1,6 +1,5 @@
 const assert = require('assert');
 const sepah = require('../../dist/index').sepah
-const mellat = require('../../dist/index').mellat
 describe('testing convertSepahDepositToIban(deposit) function ', function() {
   it('Should calculate iban correctly', () => {
     const deposit = '1426304971108'
