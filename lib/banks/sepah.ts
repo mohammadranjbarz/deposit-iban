@@ -29,7 +29,7 @@ export class Sepah extends Bank{
     }
 
     isIbanFromThisBank(iban: string): boolean {
-        return isSourceOfIbanIsValid(iban, bankCodes.SEPAH_CODE);
+        return  this.isIbanValid(iban) && isSourceOfIbanIsValid(iban, bankCodes.SEPAH_CODE);
 
     }
 }

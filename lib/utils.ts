@@ -21,6 +21,7 @@ export function generateIbanFromBban(bban:string) :string{
 }
 
 export function isIbanValid(iban:string) :boolean {
+  if ((!iban.startsWith('IR') && !iban.startsWith('ir') )|| iban.length != 26)return false
   const checkSum = iban.substring(2, 4);
   const bban = `${iban.substring(5, iban.length)}182700`;
   const checkDigitBigInt = bigInt(bban);
@@ -35,7 +36,7 @@ export const bankCodes = {
   EGHTESAD_NOVIN_CODE: '055',
   SAMAN: '056',
   SARMAYE: '058',
-  SINA: '055',
+  SINA: '059',
   ETEBARI_TOVSE: '051',
   TOSEE_SADERAT: '020',
   SANAT_MADAN: '011',

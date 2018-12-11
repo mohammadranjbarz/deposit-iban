@@ -29,7 +29,7 @@ export class Mellat extends Bank{
     }
 
     isIbanFromThisBank(iban: string): boolean {
-        return isSourceOfIbanIsValid(iban, bankCodes.MELLAT_CODE);
+        return  this.isIbanValid(iban) && isSourceOfIbanIsValid(iban, bankCodes.MELLAT_CODE);
     }
 }
 

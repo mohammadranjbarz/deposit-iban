@@ -2,7 +2,7 @@ import * as utils from '../utils'
 import {isSourceOfIbanIsValid} from '../utils'
 import {Bank} from './Bank'
 
-// Karafarin, Sanat Madan, Kar afarin, Keshavarzi
+// Karafarin, Sanat Madan, Kar afarin, Keshavarzi, Ayande
 export class Type2 extends Bank{
   bankCode: string
 
@@ -21,6 +21,10 @@ export class Type2 extends Bank{
     return utils.generateIbanFromBban(bban);
   }
   isIbanFromThisBank(iban: string): boolean {
-    return isSourceOfIbanIsValid(iban, this.bankCode);
+    return  this.isIbanValid(iban) && isSourceOfIbanIsValid(iban, this.bankCode);
   }
+
+  // convertIbanToDeposit(iban: string): string{
+  //
+  // }
 };

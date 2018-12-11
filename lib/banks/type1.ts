@@ -1,6 +1,7 @@
 import * as utils from '../utils'
 import {isSourceOfIbanIsValid} from '../utils'
 import {Bank} from './Bank'
+import {isIbanValid} from "../utils";
 
 
 // Saman, Sarmaye, Etebari Tosee, Sina
@@ -31,8 +32,6 @@ export class Type1 extends Bank{
   }
 
   isIbanFromThisBank(iban: string): boolean {
-    console.log('iban : ', iban);
-    console.log('bankCode : ', this.bankCode);
-    return isSourceOfIbanIsValid(iban, this.bankCode);
+    return this.isIbanValid(iban) && isSourceOfIbanIsValid(iban, this.bankCode);
   }
 };

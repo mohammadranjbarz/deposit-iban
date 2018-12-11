@@ -16,6 +16,7 @@ export const sanatMadan = new Type2(bankCodes.SANAT_MADAN);
 export const keshavarzi = new Type2(bankCodes.KESHAVARZI);
 export const mellat = new Mellat(bankCodes.MELLAT_CODE);
 export const sepah = new Sepah(bankCodes.SEPAH_CODE);
+export const ayande = new Type2(bankCodes.AYANDE_CODE);
 export const util = utils
 
 

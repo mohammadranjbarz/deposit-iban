@@ -7,10 +7,11 @@ export abstract class Bank {
     this.bankCode = bankCode
   }
   abstract isIbanFromThisBank(iban: string): boolean
-  abstract convertDepositToIban(iban: string): string
+  abstract convertDepositToIban(deposit: string): string
+  // abstract convertIbanToDeposit(iban: string): string
   // abstract convertIbanToDeposit(iban: string): string
   public isIbanValid (iban :string):boolean{
-    return isIbanValid(iban)
+    return  isIbanValid(iban)
   }
 
   public getBankCode():string{
