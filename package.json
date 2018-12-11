@@ -1,6 +1,6 @@
 {
   "name": "deposit-iban",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,8 +20,22 @@
     "type": "git",
     "url": "git+https://github.com/mohammadranjbar/deposit-iban.git"
   },
-  "keywords": ["iban","bank","deposit","account", "bban",
-  "بانک","شبا","شماره حساب","آینده","ملت","سپه","اقتصاد نوین","کارآفرین","سینا","سامان"
+  "keywords": [
+    "iban",
+    "bank",
+    "deposit",
+    "account",
+    "bban",
+    "بانک",
+    "شبا",
+    "شماره حساب",
+    "آینده",
+    "ملت",
+    "سپه",
+    "اقتصاد نوین",
+    "کارآفرین",
+    "سینا",
+    "سامان"
   ],
   "homepage": "https://github.com/mohammadranjbar/deposit-iban#readme",
   "author": "Mohammd Ranjbar <mranjbar.z2993@gmail.com>",
