@@ -3,6 +3,7 @@ node_js :
  - stable
 install:
  - npm install
+ - npm run build
 script:
  - npm run cover
 # Send coverage data to Coveralls
