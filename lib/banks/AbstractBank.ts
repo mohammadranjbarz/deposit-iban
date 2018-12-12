@@ -1,6 +1,6 @@
 import {isValidIban} from '../utils'
 
-export abstract class Bank {
+export abstract class AbstractBank {
   bankCode: string
 
   protected constructor(bankCode : string){

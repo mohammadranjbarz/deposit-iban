@@ -1,8 +1,8 @@
 import * as utils from '../utils'
 import {bankCodes, checkIbanSourceBank} from '../utils'
-import {Bank} from './Bank'
+import {AbstractBank} from './AbstractBank'
 
-export class Mellat extends Bank{
+export class Mellat extends AbstractBank{
     bankCode:string
 
      constructor(bankCode:string){

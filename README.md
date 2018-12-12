@@ -1,7 +1,10 @@
+[![Build Status](https://travis-ci.org/mohammadranjbar/deposit-iban.svg?branch=master)](https://travis-ci.org/mohammadranjbar/deposit-iban)
+[![Coverage Status](https://coveralls.io/repos/github/mohammadranjbar/deposit-iban/badge.svg?branch=master)](https://coveralls.io/github/mohammadranjbar/deposit-iban?branch=master)
+
 # deposit-iban
 
 A Typescript/Nodejs module that convert iranian  bank deposit (account)
-to iban (International Bank Account Number )
+to iban (International AbstractBank Account Number )
 
 Based on this Document
 [IBAN calculation](./calculate_iban.pdf)

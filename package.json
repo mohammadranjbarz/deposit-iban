@@ -8,7 +8,8 @@
     "build": "rm -rf ./dist/* && tsc ",
     "test:coverage": "nyc --r html -r lcov -r text mocha ./test/**/*.js ",
     "test": "npm run build && mocha ./test/**/*.js",
-    "lint": "echo 'Linter is not implemented yet'"
+    "lint": "echo 'Linter is not implemented yet'",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha ./test/**/*.js - - -R spec"
   },
   "husky": {
     "hooks": {

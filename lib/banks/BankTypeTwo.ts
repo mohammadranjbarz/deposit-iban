@@ -1,9 +1,9 @@
 import * as utils from '../utils'
 import {checkIbanSourceBank} from '../utils'
-import {Bank} from './Bank'
+import {AbstractBank} from './AbstractBank'
 
 // Karafarin, Sanat Madan, Kar afarin, Keshavarzi, Ayande
-export class Type2 extends Bank{
+export class BankTypeTwo extends AbstractBank{
   bankCode: string
 
   public constructor(bankCode: string) {

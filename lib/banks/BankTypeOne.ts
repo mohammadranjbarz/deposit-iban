@@ -1,11 +1,11 @@
 import * as utils from '../utils'
 import {checkIbanSourceBank} from '../utils'
-import {Bank} from './Bank'
+import {AbstractBank} from './AbstractBank'
 import {isValidIban} from "../utils";
 
 
 // Saman, Sarmaye, Etebari Tosee, Sina
-export class Type1 extends Bank{
+export class BankTypeOne extends AbstractBank{
   bankCode: string
 
   public constructor(bankCode: string) {
