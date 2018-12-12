@@ -21,14 +21,16 @@ export function generateIbanFromBban(bban:string) :string{
 }
 
 export function isValidIban(iban:string) :boolean {
-  if ((!iban.startsWith('IR') && !iban.startsWith('ir') )|| iban.length != 26)return false
+  if ((!iban.startsWith('IR') && !iban.startsWith('ir') )|| iban.length != 26 ||
+  !Number(iban.substring(2,26)))return false
+
+
   const checkSum = iban.substring(2, 4);
   const bban = `${iban.substring(5, iban.length)}182700`;
   const checkDigitBigInt = bigInt(bban);
   const checkDigitNumber = 98 - checkDigitBigInt.mod(bigInt('97'));
   return String(checkDigitNumber) === checkSum;
 }
-
 export const bankCodes = {
   SEPAH_CODE: '015',
   AYANDE_CODE: '062',
