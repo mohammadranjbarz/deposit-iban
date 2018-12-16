@@ -12,10 +12,7 @@ export function generateBbanForStandardDepositNumbers(deposit:string, bankCode:s
 
 export function generateIbanFromBban(bban:string) :string{
   const checkDigitBigInt = bigInt(bban);
-  console.log('checkDigitBigInt : ', checkDigitBigInt.toString());
-
   const checkDigitNumber = 98 - checkDigitBigInt.mod(bigInt('97'));
-  console.log('checkDigitNumber : ', checkDigitNumber);
   const checkDigit = addPadString(checkDigitNumber.toString(), '0', 2);
   return `IR${checkDigit}0${bban.substring(0, bban.length - 6)}`;
 }
