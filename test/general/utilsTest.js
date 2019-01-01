@@ -30,3 +30,11 @@ describe('testing isValidIban function mellat iban', function() {
         assert.equal(utils.isValidIban(iban), false);
     });
 });
+
+
+describe('testing isValidIban function ayande iban', function() {
+    it('iban is invalid', () => {
+        const iban = 'IR070620000000202057838008'
+        assert.equal(utils.isValidIban(iban), true);
+    });
+});
