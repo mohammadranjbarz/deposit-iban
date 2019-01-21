@@ -19,6 +19,7 @@ export const sepah = new Sepah(bankCodes.SEPAH_CODE);
 export const ayande = new BankTypeTwo(bankCodes.AYANDE_CODE);
 export const saderat = new BankTypeTwo(bankCodes.SADERAT_CODE);
 export const melli = new BankTypeTwo(bankCodes.MELLI_CODE);
+export const ansar = new BankTypeOne(bankCodes.ANSAR_CODE);
 export const util = utils
 
 

@@ -36,6 +36,7 @@ export const bankCodes = {
   AYANDE_CODE: '062',
   SADERAT_CODE: '019',
   MELLI_CODE: '017',
+  ANSAR_CODE: '063',
   MELLAT_CODE: '012',
   EGHTESAD_NOVIN_CODE: '055',
   SAMAN: '056',

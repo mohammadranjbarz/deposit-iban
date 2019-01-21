@@ -4,7 +4,7 @@ import {AbstractBank} from './AbstractBank'
 import {isValidIban} from "../utils";
 
 
-// Saman, Sarmaye, Etebari Tosee, Sina
+// Saman, Sarmaye, Etebari Tosee, Sinaو eghtesadNovin, ansar
 export class BankTypeOne extends AbstractBank{
   bankCode: string
 
