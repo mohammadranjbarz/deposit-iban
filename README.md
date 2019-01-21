@@ -5,12 +5,17 @@
 
 
 A Typescript/Nodejs module that convert iranian  bank deposit (account)
-to iban (International AbstractBank Account Number )
+to iban (International Bank Account Number )
 
 Based on this Document
 [IBAN calculation](./calculate_iban.pdf)
 
 برای تبدیل شماره حساب بانکی  به شبا و برعکس
+(ممکن است برای حساب‌های غیرمتمرکز و وابسته به شعبه که درصد کمی از حساب‌ها را تشکیل میدهند شماره شبا به درستی محاسبه نشود)
+
+[حساب متمرکز و غیر متمرکز چیست؟](http://account20.blogfa.com/post/12)
+
+اگر شماره حساب از بانک‌های مختلف دارید لطفا ایشو کنید تا به تست‌ها اضافه بشه ، و بعضی از بانک‌ها بدلیل نداشتن نمونه شماره حساب و شبا تست نشده و اضافه نشده‌اند
 ## Installation 
 ```sh
 npm install deposit-iban  --save
