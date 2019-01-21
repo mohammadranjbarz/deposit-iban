@@ -29,3 +29,12 @@ describe('testing isIbanFromThisBank(iban) Eghtesad Novin ', function () {
     });
 
 });
+
+
+describe('testing convertIbanToDeposit(deposit) eghtesadNovin ', function() {
+    it('Should calculate iban correctly', () => {
+        const deposit = '3401-800-4068261-3'
+        const iban = 'IR100550340180004068261003'
+        assert.equal(eghtesadNovin.convertIbanToDeposit(iban), deposit);
+    });
+});

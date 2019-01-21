@@ -31,7 +31,25 @@ export class BankTypeOne extends AbstractBank{
     return utils.generateIbanFromBban(bban);
   }
 
+  convertIbanToDeposit(iban: string): string{
+    const part1 = this.removeFirstZeroes(iban.substring(8,12 ))
+    const part2 = this.removeFirstZeroes(iban.substring(12,15))
+    const part3 = this.removeFirstZeroes(iban.substring(15,23))
+    const part4 = this.removeFirstZeroes(iban.substring(23,26))
+    return `${part1}-${part2}-${part3}-${part4}`
+
+  }
+
   isIbanFromThisBank(iban: string): boolean {
     return this.isValidIban(iban) && checkIbanSourceBank(iban, this.bankCode);
+  }
+
+  private removeFirstZeroes(data : string):string{
+    let returnData = data;
+    while (returnData.startsWith('0')){
+      console.log('Hi')
+      returnData = returnData.substring(1)
+    }
+    return returnData
   }
 };

@@ -28,3 +28,12 @@ describe('testing convertDepositToIban(deposit) sina ', function() {
     //   assert.equal(sina.convertDepositToIban(deposit), iban);
     // });
 });
+
+
+describe('testing convertIbanToDeposit(deposit) sina ', function() {
+    it('Should calculate iban correctly', () => {
+        const deposit = '115-813-2697105-1'
+        const iban = 'IR960590011581302697105001'
+        assert.equal(sina.convertIbanToDeposit(iban), deposit);
+    });
+});

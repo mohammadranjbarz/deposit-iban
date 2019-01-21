@@ -29,3 +29,13 @@ describe('testing convertDepositToIban(iban) Saman ', function() {
     });
 
 });
+
+
+
+describe('testing convertIbanToDeposit(deposit) saman ', function() {
+    it('Should calculate iban correctly', () => {
+        const deposit = '832-40-825920-1'
+        const iban = 'IR670560083204000825920001'
+        assert.equal(saman.convertIbanToDeposit(iban), deposit);
+    });
+});
