@@ -2,7 +2,7 @@ import * as utils from '../utils'
 import {checkIbanSourceBank} from '../utils'
 import {AbstractBank} from './AbstractBank'
 
-// Karafarin, Sanat Madan, Keshavarzi, Ayande, Saderat, Melli, Noor
+// khadamat banks : Karafarin, Sanat Madan, Keshavarzi, Ayande, Saderat, Melli, Noor
 export class BankTypeTwo extends AbstractBank{
   bankCode: string
 
