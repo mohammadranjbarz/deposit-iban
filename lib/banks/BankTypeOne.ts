@@ -47,7 +47,6 @@ export class BankTypeOne extends AbstractBank{
   private removeFirstZeroes(data : string):string{
     let returnData = data;
     while (returnData.startsWith('0')){
-      console.log('Hi')
       returnData = returnData.substring(1)
     }
     return returnData
