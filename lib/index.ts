@@ -21,6 +21,8 @@ export const saderat = new BankTypeTwo(bankCodes.SADERAT_CODE);
 export const melli = new BankTypeTwo(bankCodes.MELLI_CODE);
 export const ansar = new BankTypeOne(bankCodes.ANSAR_CODE);
 export const pasargad = new BankTypeOne(bankCodes.PASARGAD_CODE);
+export const dey = new BankTypeTwo(bankCodes.DEY_CODE);
+export const tejarat = new BankTypeTwo(bankCodes.TEJARAT_CODE);
 export const util = utils
 
 

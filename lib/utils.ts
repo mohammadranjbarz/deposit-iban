@@ -38,6 +38,8 @@ export const bankCodes = {
   MELLI_CODE: '017',
   ANSAR_CODE: '063',
   PASARGAD_CODE: '057',
+  DEY_CODE: '066',
+  TEJARAT_CODE: '018',
   MELLAT_CODE: '012',
   EGHTESAD_NOVIN_CODE: '055',
   SAMAN: '056',
