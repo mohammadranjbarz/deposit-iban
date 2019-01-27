@@ -1,5 +1,5 @@
 const assert = require('assert');
-const sepah = require('../../dist/index').sepah
+const sepah = require('../../dist/index').getBankFromCode('015')
 describe('testing convertSepahDepositToIban(deposit) function ', function() {
   it('Should calculate iban correctly', () => {
     const deposit = '1426304971108'

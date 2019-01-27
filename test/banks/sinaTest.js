@@ -1,5 +1,5 @@
 const assert = require('assert');
-const sina = require('../../dist/index').sina
+const sina = require('../../dist/index').getBankFromCode('059')
 
 
 

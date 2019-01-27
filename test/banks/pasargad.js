@@ -1,5 +1,5 @@
 const assert = require('assert');
-const pasargad = require('../../dist/index').pasargad
+const pasargad = require('../../dist/index').getBankFromCode('057')
 
 describe('testing isIbanFromThisBank(iban) pasargad ', function() {
   it('should return true', () => {

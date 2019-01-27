@@ -1,4 +1,4 @@
-const eghtesadNovin = require('../../dist/index').eghtesadNovin
+const eghtesadNovin = require('../../dist/index').getBankFromCode('055')
 const assert = require('chai').assert
 
 describe('testing convertDepositToIban(deposit) Eghtesad novin ', function () {

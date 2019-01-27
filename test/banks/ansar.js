@@ -1,5 +1,5 @@
 const assert = require('assert');
-const ansar = require('../../dist/index').ansar
+const ansar = require('../../dist/index').getBankFromCode('063')
 
 
 

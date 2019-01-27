@@ -31,25 +31,26 @@ export function isValidIban(iban: string): boolean {
   return checkDigitNumber === checkSum;
 }
 
-export const bankCodes = {
-  SEPAH_CODE: '015',
-  AYANDE_CODE: '062',
-  SADERAT_CODE: '019',
-  MELLI_CODE: '017',
-  ANSAR_CODE: '063',
-  PASARGAD_CODE: '057',
-  DEY_CODE: '066',
-  TEJARAT_CODE: '018',
-  MELLAT_CODE: '012',
-  EGHTESAD_NOVIN_CODE: '055',
-  SAMAN: '056',
-  SARMAYE: '058',
-  SINA: '059',
-  ETEBARI_TOVSE: '051',
-  TOSEE_SADERAT: '020',
-  SANAT_MADAN: '011',
-  KAR_AFARIN: '053',
-  KESHAVARZI: '016',
+export enum BANK_CODES  {
+  SEPAH= '015',
+  RESALAT= '070',
+  AYANDE= '062',
+  SADERAT= '019',
+  MELLI= '017',
+  ANSAR= '063',
+  PASARGAD= '057',
+  DEY= '066',
+  TEJARAT= '018',
+  MELLAT= '012',
+  EGHTESAD_NOVIN= '055',
+  SAMAN= '056',
+  SARMAYE= '058',
+  SINA= '059',
+  ETEBARI_TOVSE= '051',
+  TOSEE_SADERAT= '020',
+  SANAT_MADAN= '011',
+  KAR_AFARIN= '053',
+  KESHAVARZI= '016',
 };
 
 export function checkIbanSourceBank(iban: string, bankCode: string): boolean {

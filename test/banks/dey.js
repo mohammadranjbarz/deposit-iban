@@ -1,5 +1,5 @@
 const assert = require('assert');
-const dey = require('../../dist/index').dey
+const dey = require('../../dist/index').getBankFromCode('066')
 
 
 

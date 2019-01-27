@@ -1,5 +1,5 @@
 const assert = require('assert');
-const melli = require('../../dist/index').melli
+const melli = require('../../dist/index').getBankFromCode('017')
 
 
 

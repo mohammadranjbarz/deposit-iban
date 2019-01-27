@@ -1,5 +1,5 @@
 import * as utils from '../utils'
-import {bankCodes, checkIbanSourceBank} from '../utils'
+import {BANK_CODES, checkIbanSourceBank} from '../utils'
 import {AbstractBank} from './AbstractBank'
 
 export class Sepah extends AbstractBank{
@@ -37,8 +37,12 @@ export class Sepah extends AbstractBank{
         return utils.generateIbanFromBban(bban);
 
     }
+    convertIbanToDeposit(deposit: string): string {
+       throw new Error("convertIbanToDeposit() not implemented for sepah")
+    }
+
     isIbanFromThisBank(iban: string): boolean {
-        return  this.isValidIban(iban) && checkIbanSourceBank(iban, bankCodes.SEPAH_CODE);
+        return  this.isValidIban(iban) && checkIbanSourceBank(iban, BANK_CODES.SEPAH);
 
     }
 }

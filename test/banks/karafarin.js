@@ -1,5 +1,5 @@
 const assert = require('assert');
-const karafarin = require('../../dist/index').karafarin
+const karafarin = require('../../dist/index').getBankFromCode('053')
 
 
 

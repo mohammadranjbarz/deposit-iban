@@ -1,5 +1,5 @@
 const assert = require('assert');
-const ayande = require('../../dist/index').ayande
+const ayande = require('../../dist/index').getBankFromCode('062')
 
 
 

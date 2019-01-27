@@ -1,5 +1,5 @@
 const assert = require('assert');
-const saderat = require('../../dist/index').saderat
+const saderat = require('../../dist/index').getBankFromCode('019')
 
 
 

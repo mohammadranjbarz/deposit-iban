@@ -1,4 +1,4 @@
-const saman = require('../../dist/index').saman
+const saman = require('../../dist/index').getBankFromCode('056')
 const assert = require('chai').assert
 
 describe('testing convertDepositToIban(deposit) saman ', function() {
