@@ -41,13 +41,25 @@ isValidIban : true
 ```
 ### TypeScript
 ```typescript
-import { sepah, util } from 'deposit-iban';
-const iban = sepah.convertDepositToIban('1177301920207');
+import { getBankFromCode, util } from 'deposit-iban';
+
+// see bank codes from table below of README, 015 is sepah codeBank
+const sepahBank = getBankFromCode("015")
+const iban = sepahBank.convertDepositToIban('1177301920207');
 console.log('iban : ',iban)
-const deposit = sepah.convertIbanToDeposit('IR240150000001177301920207')
+const deposit = sepahBank.convertIbanToDeposit('IR240150000001177301920207')
 console.log('deposit : ',deposit)
-const isValidIban = util.isValidIban('IR240150000001177301920207')
+const isValidIban = sepahBank.isValidIban('IR240150000001177301920207')
 console.log('isValidIban : ',isValidIban)
+
+OR
+import { convertDepositToIban, convertIbanToDeposit } from 'deposit-iban';
+const deposit = convertIbanToDeposit("IR240150000001177301920207")
+console.log('deposit : ',deposit)
+// see bank codes from table below of README , 015 is sepah codeBank
+const iban = sepahBank.convertDepositToIban('015', '1177301920207');
+console.log('iban : ',iban)
+
 ```
 ```sh
 Output should be : 
@@ -79,3 +91,5 @@ npm run test
 | pasargad     | پاسارگاد    | 057  |        ✓        |        ✓        |
 | tejarat     | تجارت    | 018  |        ✓        |        ✓        |
 | dey     | دی    | 066  |        ✓        |        ✓        |
+| ansar     |انصار| 063  |        ✓        |        ✓        |
+| sarmaye     |سرمایه| 058  |        ✓        |        ✓        |
