@@ -1,5 +1,5 @@
 import * as utils from '../utils'
-import {BANK_CODES, checkIbanSourceBank} from '../utils'
+import {BANK_CODES, checkIbanSourceBank, removeFirstZeroes} from '../utils'
 import {AbstractBank} from './AbstractBank'
 
 export class Sepah extends AbstractBank{
@@ -11,7 +11,6 @@ export class Sepah extends AbstractBank{
     }
     convertDepositToIban(deposit: string): string {
         let formattedBankCode = this.bankCode;
-        // @ts-ignore:
         if (formattedBankCode.startsWith('0')) {
             formattedBankCode = formattedBankCode.replace('0', '');
         }
@@ -37,8 +36,12 @@ export class Sepah extends AbstractBank{
         return utils.generateIbanFromBban(bban);
 
     }
-    convertIbanToDeposit(deposit: string): string {
-       throw new Error("convertIbanToDeposit() not implemented for sepah")
+    convertIbanToDeposit(iban: string): string {
+        if (iban.charAt(7) === "1"){
+            return removeFirstZeroes(iban.substr(16,26))
+        } else{
+            return removeFirstZeroes(iban.substr(7))
+        }
     }
 
     isIbanFromThisBank(iban: string): boolean {

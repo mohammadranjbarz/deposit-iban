@@ -1,5 +1,5 @@
 import * as utils from '../utils'
-import {checkIbanSourceBank} from '../utils'
+import {checkIbanSourceBank, removeFirstZeroes} from '../utils'
 import {AbstractBank} from './AbstractBank'
 import {isValidIban} from "../utils";
 
@@ -32,10 +32,10 @@ export class BankTypeOne extends AbstractBank{
   }
 
   convertIbanToDeposit(iban: string): string{
-    const part1 = this.removeFirstZeroes(iban.substring(8,12 ))
-    const part2 = this.removeFirstZeroes(iban.substring(12,15))
-    const part3 = this.removeFirstZeroes(iban.substring(15,23))
-    const part4 = this.removeFirstZeroes(iban.substring(23,26))
+    const part1 = removeFirstZeroes(iban.substring(8,12 ))
+    const part2 = removeFirstZeroes(iban.substring(12,15))
+    const part3 = removeFirstZeroes(iban.substring(15,23))
+    const part4 = removeFirstZeroes(iban.substring(23,26))
     return `${part1}-${part2}-${part3}-${part4}`
 
   }
@@ -44,11 +44,4 @@ export class BankTypeOne extends AbstractBank{
     return this.isValidIban(iban) && checkIbanSourceBank(iban, this.bankCode);
   }
 
-  private removeFirstZeroes(data : string):string{
-    let returnData = data;
-    while (returnData.startsWith('0')){
-      returnData = returnData.substring(1)
-    }
-    return returnData
-  }
 };

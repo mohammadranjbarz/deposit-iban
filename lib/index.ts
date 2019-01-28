@@ -7,25 +7,25 @@ import {BankTypeTwo} from './banks/BankTypeTwo'
 import {AbstractBank} from './banks/AbstractBank'
 import {Resalat} from './banks/resalat'
 
-export const saman = new BankTypeOne(BANK_CODES.SAMAN);
-export const sarmaye = new BankTypeOne(BANK_CODES.SARMAYE);
-export const sina = new BankTypeOne(BANK_CODES.SINA);
-export const eghtesadNovin = new BankTypeOne(BANK_CODES.EGHTESAD_NOVIN);
-export const etebariTovse = new BankTypeOne(BANK_CODES.ETEBARI_TOVSE);
-export const karafarin = new BankTypeTwo(BANK_CODES.KAR_AFARIN);
-export const toseeSaderat = new BankTypeTwo(BANK_CODES.TOSEE_SADERAT);
-export const sanatMadan = new BankTypeTwo(BANK_CODES.SANAT_MADAN);
-export const keshavarzi = new BankTypeTwo(BANK_CODES.KESHAVARZI);
-export const mellat = new Mellat(BANK_CODES.MELLAT);
-export const sepah = new Sepah(BANK_CODES.SEPAH);
-export const ayande = new BankTypeTwo(BANK_CODES.AYANDE);
-export const saderat = new BankTypeTwo(BANK_CODES.SADERAT);
-export const melli = new BankTypeTwo(BANK_CODES.MELLI);
-export const ansar = new BankTypeOne(BANK_CODES.ANSAR);
-export const pasargad = new BankTypeOne(BANK_CODES.PASARGAD);
-export const dey = new BankTypeTwo(BANK_CODES.DEY);
-export const tejarat = new BankTypeTwo(BANK_CODES.TEJARAT);
-export const resalat = new Resalat(BANK_CODES.RESALAT);
+const saman = new BankTypeOne(BANK_CODES.SAMAN);
+const sarmaye = new BankTypeOne(BANK_CODES.SARMAYE);
+const sina = new BankTypeOne(BANK_CODES.SINA);
+const eghtesadNovin = new BankTypeOne(BANK_CODES.EGHTESAD_NOVIN);
+const etebariTovse = new BankTypeOne(BANK_CODES.ETEBARI_TOVSE);
+const karafarin = new BankTypeTwo(BANK_CODES.KAR_AFARIN);
+const toseeSaderat = new BankTypeTwo(BANK_CODES.TOSEE_SADERAT);
+const sanatMadan = new BankTypeTwo(BANK_CODES.SANAT_MADAN);
+const keshavarzi = new BankTypeTwo(BANK_CODES.KESHAVARZI);
+const mellat = new Mellat(BANK_CODES.MELLAT);
+const sepah = new Sepah(BANK_CODES.SEPAH);
+const ayande = new BankTypeTwo(BANK_CODES.AYANDE);
+const saderat = new BankTypeTwo(BANK_CODES.SADERAT);
+const melli = new BankTypeTwo(BANK_CODES.MELLI);
+const ansar = new BankTypeOne(BANK_CODES.ANSAR);
+const pasargad = new BankTypeOne(BANK_CODES.PASARGAD);
+const dey = new BankTypeTwo(BANK_CODES.DEY);
+const tejarat = new BankTypeTwo(BANK_CODES.TEJARAT);
+const resalat = new Resalat(BANK_CODES.RESALAT);
 export const util = utils
 export  { BANK_CODES}
 export const getBankFromCode = (bankCode: String) : AbstractBank=> {
@@ -69,7 +69,8 @@ export const getBankFromCode = (bankCode: String) : AbstractBank=> {
     case BANK_CODES.RESALAT:
       return resalat
     default:
-      throw new Error(`Bank with ${bankCode} code not supported`)
+      throw new Error(`Bank with ${bankCode} code not supported,
+       check supported banks here\n https://github.com/mohammadranjbar/deposit-iban#supported-banks`)
   }
 }
 export const convertIbanToDeposit = (iban: string):string =>{

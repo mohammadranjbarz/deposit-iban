@@ -31,6 +31,14 @@ export function isValidIban(iban: string): boolean {
   return checkDigitNumber === checkSum;
 }
 
+export function removeFirstZeroes(data : string):string{
+  let returnData = data;
+  while (returnData.startsWith('0')){
+    returnData = returnData.substring(1)
+  }
+  return returnData
+}
+
 export enum BANK_CODES  {
   SEPAH= '015',
   RESALAT= '070',
