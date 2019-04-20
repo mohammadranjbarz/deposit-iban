@@ -1,6 +1,7 @@
 const assert = require('assert');
 const utils = require('../../dist/index').util
 
+const depositCardIbanData = require('../depositCardIbanData')
 
 
 
@@ -37,4 +38,14 @@ describe('testing isValidIban function ayande iban', function() {
         const iban = 'IR070620000000202057838008'
         assert.equal(utils.isValidIban(iban), true);
     });
+});
+
+describe('getBankCodeFromCardNumber', function() {
+
+    depositCardIbanData.forEach(item => {
+        it(`bank ${item.bankName}` , () => {
+            assert.equal(utils.getBankCodeFromCardNumber(item.cardNumber), item.bankCode);
+        });
+    })
+
 });

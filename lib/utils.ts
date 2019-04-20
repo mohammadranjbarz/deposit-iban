@@ -1,5 +1,48 @@
 const bigInt = require('big-integer');
 
+export enum BANK_CODES {
+  SEPAH = '015',
+  RESALAT = '070',
+  AYANDE = '062',
+  SADERAT = '019',
+  MELLI = '017',
+  ANSAR = '063',
+  PASARGAD = '057',
+  DEY = '066',
+  TEJARAT = '018',
+  MELLAT = '012',
+  EGHTESAD_NOVIN = '055',
+  SAMAN = '056',
+  SARMAYE = '058',
+  SINA = '059',
+  ETEBARI_TOVSE = '051',
+  TOSEE_SADERAT = '020',
+  SANAT_MADAN = '011',
+  KAR_AFARIN = '053',
+  KESHAVARZI = '016',
+  IRAN_ZAMIN = '069',
+};
+const bankCardNumberMapping: {
+  [keys: string]: string
+} = {
+  '627412': BANK_CODES.EGHTESAD_NOVIN,
+  '621986': BANK_CODES.SAMAN,
+  '639607': BANK_CODES.SARMAYE,
+  '502229': BANK_CODES.PASARGAD,
+  '504172': BANK_CODES.RESALAT,
+  '585983': BANK_CODES.TEJARAT,
+  '603770': BANK_CODES.KESHAVARZI,
+  '627488': BANK_CODES.KAR_AFARIN,
+  '636214': BANK_CODES.AYANDE,
+  '603769': BANK_CODES.SADERAT,
+  '603799': BANK_CODES.MELLI,
+  '502938': BANK_CODES.DEY,
+  '627381': BANK_CODES.ANSAR,
+  '505785': BANK_CODES.IRAN_ZAMIN,
+  '610433': BANK_CODES.MELLAT,
+  '589210':BANK_CODES.SEPAH
+}
+
 export function addPadString(originalString: string, padString: string, length: number): string {
   let newString = originalString;
   while (newString.length < length) {
@@ -31,35 +74,25 @@ export function isValidIban(iban: string): boolean {
   return checkDigitNumber === checkSum;
 }
 
-export function removeFirstZeroes(data : string):string{
+export function removeFirstZeroes(data: string): string {
   let returnData = data;
-  while (returnData.startsWith('0')){
+  while (returnData.startsWith('0')) {
     returnData = returnData.substring(1)
   }
   return returnData
 }
 
-export enum BANK_CODES  {
-  SEPAH= '015',
-  RESALAT= '070',
-  AYANDE= '062',
-  SADERAT= '019',
-  MELLI= '017',
-  ANSAR= '063',
-  PASARGAD= '057',
-  DEY= '066',
-  TEJARAT= '018',
-  MELLAT= '012',
-  EGHTESAD_NOVIN= '055',
-  SAMAN= '056',
-  SARMAYE= '058',
-  SINA= '059',
-  ETEBARI_TOVSE= '051',
-  TOSEE_SADERAT= '020',
-  SANAT_MADAN= '011',
-  KAR_AFARIN= '053',
-  KESHAVARZI= '016',
-};
+export function getBankCodeFromCardNumber(cardNumber: string) {
+  if (cardNumber.length < 6){
+    throw new Error('Invalid cardNumber prefix length (at least should be 6 digit)')
+  }
+  const bankCode = bankCardNumberMapping[cardNumber.substr(0, 6)]
+  if (!bankCode) {
+    throw new Error('BankCode for this cardNumber not found')
+  }
+  return bankCode
+}
+
 
 export function checkIbanSourceBank(iban: string, bankCode: string): boolean {
   return Boolean(bankCode === iban.substring(4, 7));
