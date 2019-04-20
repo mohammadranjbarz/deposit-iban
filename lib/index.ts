@@ -26,6 +26,7 @@ const pasargad = new BankTypeOne(BANK_CODES.PASARGAD);
 const dey = new BankTypeTwo(BANK_CODES.DEY);
 const tejarat = new BankTypeTwo(BANK_CODES.TEJARAT);
 const resalat = new Resalat(BANK_CODES.RESALAT);
+const iranZamin = new BankTypeOne(BANK_CODES.IRAN_ZAMIN);
 export const util = utils
 export  { BANK_CODES}
 export const getBankFromCode = (bankCode: String) : AbstractBank=> {
@@ -68,6 +69,8 @@ export const getBankFromCode = (bankCode: String) : AbstractBank=> {
       return tejarat
     case BANK_CODES.RESALAT:
       return resalat
+    case BANK_CODES.IRAN_ZAMIN:
+      return iranZamin
     default:
       throw new Error(`Bank with ${bankCode} code not supported,
        check supported banks here\n https://github.com/mohammadranjbar/deposit-iban#supported-banks`)

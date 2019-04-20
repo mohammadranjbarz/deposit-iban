@@ -11,14 +11,17 @@
 	"bankCode": "012",
 	"deposit": "1277075593",
 	"cardNumber" : "6104337941250373",
-	"iban": "IR120120000000001277075593"
+	"iban": "IR120120000000001277075593",
+	"testShouldNotPass": true
+
   },
   {
 	"bankName": "pasargad",
 	"bankCode": "057",
-	"deposit": "387.8000.11476567.1",
+	"deposit": "387-8000-11476567-1",
 	"cardNumber" : "5022291051754339",
-	"iban": "IR790570038780011476567101"
+	"iban": "IR790570038780011476567101",
+	"testShouldNotPass": true
   },
   {
 	"bankName": "melli",
@@ -30,21 +33,21 @@
   {
 	"bankName": "sarmaye",
 	"bankCode": "058",
-	"deposit": "1027.800.1046216.1",
+	"deposit": "1027-800-1046216-1",
 	"cardNumber" : "6396071108245127",
 	"iban": "IR570580102780001046216001"
   },
   {
 	"bankName": "dey",
 	"bankCode": "066",
-	"deposit": "02101177649008",
+	"deposit": "2101177649008",
 	"cardNumber" : "5029381014361265",
-	"iban": "IR970660000000201177649008"
+	"iban": "IR540660000002101177649008"
   },
   {
 	"bankName": "eghtesade novin",
 	"bankCode": "055",
-	"deposit": "204.800.4974862.1",
+	"deposit": "204-800-4974862-1",
 	"cardNumber" : "6274121148643232",
 	"iban": "IR950550020480004974862001"
   },
@@ -58,14 +61,14 @@
   {
 	"bankName": "keshavarzi",
 	"bankCode": "016",
-	"deposit": "110412760",
+	"deposit": "0000110412760",
 	"cardNumber" : "6037701144294128",
 	"iban": "IR130160000000000110412760"
   },
   {
 	"bankName": "saman",
 	"bankCode": "056",
-	"deposit": "872.800.2030890.1",
+	"deposit": "872-800-2030890-1",
 	"cardNumber" : "6219861016111758",
 	"iban": "IR230560087280002030890001"
   },
@@ -79,7 +82,7 @@
   {
 	"bankName": "ansar",
 	"bankCode": "063",
-	"deposit": "1862.701.9630548.1",
+	"deposit": "1862-701-9630548-1",
 	"cardNumber" : "6273811094786297",
 	"iban": "IR190630186270109630548001"
   },
@@ -100,7 +103,7 @@
   {
 	"bankName": "tejarat",
 	"bankCode": "018",
-	"deposit": "79336270",
+	"deposit": "0000079336270",
 	"cardNumber" : "5859831094959292",
 	"iban": "IR660180000000000079336270"
   }
