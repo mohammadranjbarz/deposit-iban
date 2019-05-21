@@ -90,4 +90,4 @@ export const convertDepositToIban = (bankCode :BANK_CODES, deposit: string):stri
 export const isIbanValid = utils.isValidIban
 
 
-
+export {getBankCodeFromCardNumber} from './utils'
