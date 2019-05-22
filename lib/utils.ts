@@ -21,6 +21,7 @@ export enum BANK_CODES {
   KAR_AFARIN = '053',
   KESHAVARZI = '016',
   IRAN_ZAMIN = '069',
+  PARSIAN = '054',
 };
 const bankCardNumberMapping: {
   [keys: string]: string
