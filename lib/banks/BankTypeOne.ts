@@ -20,7 +20,17 @@ export class BankTypeOne extends AbstractBank{
       formattedBankCode = formattedBankCode.replace('0', '');
     }
     let bban;
-    const parts = deposit.split('-');
+    let separator ;
+    if (deposit.includes('-')){
+      separator = '-'
+    }  else if (deposit.includes('/')) {
+      separator = '/'
+    }else if(deposit.includes('.')) {
+      separator = '.'
+    }else{
+      throw new Error('Invalid deposit format')
+    }
+    const parts = deposit.split(separator);
     if (parts.length !== 4) throw new Error('Invalid deposit');
     const part0 = utils.addPadString(parts[0], '0', 4);
     const part1 = utils.addPadString(parts[1], '0', 3);
