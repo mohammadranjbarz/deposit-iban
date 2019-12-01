@@ -24,6 +24,13 @@
 	"testShouldNotPass": true
   },
   {
+	"bankName": "shahr",
+	"bankCode": "061",
+	"deposit": "700809045878",
+	"cardNumber" : "5047061090016268",
+	"iban": "IR910610000000700809045878"
+  },
+  {
 	"bankName": "melli",
 	"bankCode": "017",
 	"deposit": "0105252566003",

@@ -6,6 +6,7 @@ import {BankTypeOne} from './banks/BankTypeOne'
 import {BankTypeTwo} from './banks/BankTypeTwo'
 import {AbstractBank} from './banks/AbstractBank'
 import {Resalat} from './banks/resalat'
+import {Shahr} from './banks/shahr'
 
 const saman = new BankTypeOne(BANK_CODES.SAMAN);
 const sarmaye = new BankTypeOne(BANK_CODES.SARMAYE);
@@ -28,6 +29,7 @@ const tejarat = new BankTypeTwo(BANK_CODES.TEJARAT);
 const resalat = new Resalat(BANK_CODES.RESALAT);
 const iranZamin = new BankTypeOne(BANK_CODES.IRAN_ZAMIN);
 const parsian = new BankTypeOne(BANK_CODES.PARSIAN);
+const shahr = new Shahr();
 export const util = utils
 export  { BANK_CODES}
 export const getBankFromCode = (bankCode: String) : AbstractBank=> {
@@ -74,6 +76,8 @@ export const getBankFromCode = (bankCode: String) : AbstractBank=> {
       return iranZamin
     case BANK_CODES.PARSIAN:
       return parsian
+    case BANK_CODES.SHAHR:
+      return shahr
     default:
       throw new Error(`Bank with ${bankCode} code not supported,
        check supported banks here\n https://github.com/mohammadranjbar/deposit-iban#supported-banks`)
