@@ -31,6 +31,15 @@
 	"iban": "IR910610000000700809045878"
   },
   {
+	"bankName": "maskan",
+	"bankCode": "014",
+	"deposit": "14003224822",
+	"cardNumber" : "6280231111111111",
+	"iban": "IR840140040000014003224822",
+	"testShouldNotPass": true
+
+  },
+  {
 	"bankName": "melli",
 	"bankCode": "017",
 	"deposit": "0105252566003",

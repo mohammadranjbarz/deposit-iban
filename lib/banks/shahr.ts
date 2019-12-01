@@ -1,13 +1,14 @@
 import * as utils from '../utils'
-import {BANK_CODES, checkIbanSourceBank} from '../utils'
+import { checkIbanSourceBank, removeFirstZeroes} from '../utils'
 import {AbstractBank} from './AbstractBank'
-const bankCode=BANK_CODES.SHAHR
 
 export class Shahr extends AbstractBank{
-  public constructor(){
-    super(bankCode)
-  }
+  bankCode: string
 
+  public constructor(bankCode: string) {
+    super(bankCode)
+    this.bankCode = bankCode;
+  }
   convertDepositToIban(deposit: string): string {
     let formattedBankCode:string = this.bankCode;
     if (formattedBankCode.startsWith('0')) {
@@ -21,6 +22,6 @@ export class Shahr extends AbstractBank{
   }
 
   convertIbanToDeposit(iban: string): string{
-    return iban.substring(14,26)
+    return removeFirstZeroes( iban.substring(13,26) )
   }
 };

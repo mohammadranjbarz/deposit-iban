@@ -23,6 +23,7 @@ export enum BANK_CODES {
   IRAN_ZAMIN = '069',
   PARSIAN = '054',
   SHAHR = '061',
+  MASKAN = '014',
 };
 const bankCardNumberMapping: {
   [keys: string]: string
@@ -44,6 +45,7 @@ const bankCardNumberMapping: {
   '610433': BANK_CODES.MELLAT,
   '589210':BANK_CODES.SEPAH,
   '504706':BANK_CODES.SHAHR,
+  '628023':BANK_CODES.MASKAN,
 }
 
 export function addPadString(originalString: string, padString: string, length: number): string {
