@@ -25,9 +25,11 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
+      - run: npm run build
+      - run: npm run test
 
       - name: deploy aws staging
-        if: contains( github.ref, 'develop/' )
+        if: contains( github.ref, 'develop' )
         uses: actions/aws/cli@master
         with:
           args: s3 cp build s3://www.example.com --recursive --exclude ".git/*" --exlucde ".github/*"
