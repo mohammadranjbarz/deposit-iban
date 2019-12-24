@@ -67,6 +67,9 @@ jobs:
         run: npm run build
       - name: test
         run: npm run test
+      - run: echo "aws secrets"
+      - run: echo  ${{ secrets.AWS_ACCESS_KEY_ID }}
+      - run: echo  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: serverless deploy
         if: contains( github.ref, 'develop' )
         run: npx serverless deploy
