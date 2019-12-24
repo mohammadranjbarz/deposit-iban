@@ -39,9 +39,16 @@
 name: Master CI/CD
 
 on:
+  # Trigger the workflow on push or pull request,
+  # but only for the develop branch
   push:
     branches:
-      - master
+      - develop
+      - 'releases/**'
+      - 'feature/**'
+  pull_request:
+    branches:
+      - develop
 
 jobs:
   primary:
