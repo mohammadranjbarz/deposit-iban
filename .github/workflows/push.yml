@@ -67,9 +67,16 @@ jobs:
         run: npm run build
       - name: test
         run: npm run test
-      - run: echo "aws secrets"
-      - run: echo  ${{ secrets.AWS_ACCESS_KEY_ID }}
-      - run: echo  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - uses: actions/checkout@v1
+                - name: Decrypt large secret
+                run: ./.github/scripts/decrypt_secret.sh
+                env:
+                  LARGE_SECRET_PASSPHRASE: $
+        # This command is just an example to show your secret being printed
+        # Ensure you remove any print statements of your secrets. GitHub does
+        # not hide secrets that use this workaround.
+                - name: Test printing your secret (Remove this step in production)
+                  run: cat $HOME/secrets/my_secret.json
       - name: serverless deploy
         if: contains( github.ref, 'develop' )
         run: npx serverless deploy
