@@ -26,14 +26,6 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm install
 
-      - name: npm test
-        uses: actions/npm@master
-        with:
-          args: run test
-      - name: npm lint
-        uses: actions/npm@master
-        with:
-          args: run lint
       - name: deploy aws staging
         if: contains( github.ref, 'develop/' )
         uses: actions/aws/cli@master
