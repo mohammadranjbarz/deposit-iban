@@ -1,0 +1,28 @@
+on: push
+name: npm build, lint, test and publish
+jobs:
+  build-and-publish:
+    name: build and publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: npm install
+        uses: actions/npm@master
+        with:
+          args: install
+      - name: npm test
+        uses: actions/npm@master
+        with:
+          args: run test
+      - name: npm lint
+        uses: actions/npm@master
+        with:
+          args: run lint
+      - name: deploy aws
+        uses: actions/aws/cli@master
+        with:
+          args: s3 cp . s3://www.example.com --recursive --exclude ".git/*" --exlucde ".github/*"
+          secrets:
+              AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY
+          uses: actions/aws/cli@master

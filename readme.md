@@ -56,7 +56,7 @@ npm run test
 
 | ‌Bank          | نام فارسی   | Code | deposit to iban | iban to deposit |
 |---------------|-------------|------|:---------------:|:---------------:|
-|  mellat       | ملت         | 012  |        ✓        |        ×        |
+|  mellat       | ملت         | 012  |        ✓        |        ×        |  
 | ayande        | آینده       | 062  |        ✓        |        ✓        |
 | sepah         | سپه         | 015  |        ✓        |        ✓        |
 | eghtesadNovin | اقتصاد نوین | 055  |        ✓        |        ×        |
