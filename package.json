@@ -41,7 +41,8 @@
   "author": "Mohammd Ranjbar <mranjbar.z2993@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "big-integer": "^1.6.40"
+    "big-integer": "^1.6.40",
+    "serverless-s3-sync": "^1.9.2"
   },
   "devDependencies": {
     "@types/node": "^10.12.12",
