@@ -8,8 +8,6 @@ export abstract class Bank {
   }
   abstract isIbanFromThisBank(iban: string): boolean
   abstract convertDepositToIban(deposit: string): string
-  // abstract convertIbanToDeposit(iban: string): string
-  // abstract convertIbanToDeposit(iban: string): string
   public isValidIban (iban :string):boolean{
     return  isValidIban(iban)
   }
