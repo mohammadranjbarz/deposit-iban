@@ -6,6 +6,7 @@ export abstract class Bank {
   protected constructor(bankCode : string){
     this.bankCode = bankCode
   }
+  //
 
   abstract isIbanFromThisBank(iban: string): boolean
   abstract convertDepositToIban(deposit: string): string
