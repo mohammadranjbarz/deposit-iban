@@ -39,7 +39,4 @@ jobs:
         uses: actions/aws/cli@master
         with:
           args: s3 cp build s3://www.example.com --recursive --exclude ".git/*" --exlucde ".github/*"
-#          env:
-#            - AWS_ACCESS_KEY_ID : adasdas
-#            - AWS_SECRET_ACCESS_KEY: sadsdafdsa
           uses: actions/aws/cli@master
