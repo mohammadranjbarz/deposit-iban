@@ -1,6 +1,6 @@
-const AWS = require("aws-sdk"); // from AWS SDK
-const fs = require("fs"); // from node.js
-const path = require("path"); // from node.js
+const AWS = require("aws-sdk");
+const fs = require("fs");
+const path = require("path");
 const rootFolderName = 'dist'
 // configuration
 const config = {
