@@ -8,6 +8,7 @@
     "build": "rm -rf ./dist/* && tsc ",
     "test:coverage": "nyc --r html -r lcov -r text mocha ./test/**/*.js ",
     "test": "npm run build && mocha ./test/**/*.js",
+    "deploy-aws": "node aws-upload.js",
     "lint": "echo 'Linter is not implemented yet'"
   },
   "husky": {
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "@types/node": "^10.12.12",
+    "aws-sdk": "^2.596.0",
     "chai": "^4.2.0",
     "husky": "^1.2.0",
     "istanbul": "^0.4.5",
