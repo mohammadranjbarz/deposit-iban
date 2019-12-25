@@ -30,16 +30,18 @@ jobs:
       - name: test
         run: npm run test
       - name: aws deploy nighly
+        #should change to feature/
         if: contains( github.ref, 'develop' )
         run: BUCKET_NAME=nightly.mranjbar.ir AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} npm run deploy-aws
 
       - name: aws deploy staging
         if: contains( github.ref, 'release/' )
-        run: BUCKET_NAME=nightly.mranjbar.ir AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} npm run deploy-aws
+        run: BUCKET_NAME=staging.mranjbar.ir AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} npm run deploy-aws
 
-      - name: aws deploy nighly
-        if: github.ref=='master'
-        run: BUCKET_NAME=nightly.mranjbar.ir AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} npm run deploy-aws
+      - name: aws deploy release
+        #should change to master
+        if: github.ref=='develop'
+        run: BUCKET_NAME=release.mranjbar.ir AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} npm run deploy-aws
 
 #        env:
 #          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

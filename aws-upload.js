@@ -25,7 +25,6 @@ function uploadDirectoryFiles(distFolderPath) {
     const files = fs.readdirSync(distFolderPath)
     if (!files || files.length === 0) {
         console.log(`provided folder '${distFolderPath}' is empty or does not exist.`);
-        console.log('Make sure your project was compiled!');
         return;
     }
     for (const fileName of files) {
