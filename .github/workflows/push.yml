@@ -1,42 +1,4 @@
-#on:
-#  # Trigger the workflow on push or pull request,
-#  # but only for the develop branch
-#  push:
-#    branches:
-#      - develop
-#      - 'releases/**'
-#      - 'feature/**'
-#  pull_request:
-#    branches:
-#      - develop
-#
-#name: npm build, lint, test and publish
-#jobs:
-#  build-and-publish:
-#    name: build and publish
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        node: [ '10', '8' ]
-#    steps:
-#      - uses: actions/checkout@master
-#      - name: npm install
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: ${{ matrix.node }}
-#      - run: npm install
-#      - run: npm run build
-#      - run: npm run test
-#      - run: apt-get install awscli
-#
-#      - name: serverless deploy
-#        run: npx serverless deploy
-#        env:
-#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#
-
-name: Master CI/CD
+name:  CI/CD
 
 on:
   # Trigger the workflow on push or pull request,
@@ -67,7 +29,16 @@ jobs:
         run: npm run build
       - name: test
         run: npm run test
-      - name: serverless deploy
+      - run: echo ${github.ref}
+      - name: aws deploy nighly
+        if: contains( github.ref, 'develop' )
+        run: BUCKET_NAME=nightly.mranjbar.ir AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} npm run deploy-aws
+
+      - name: aws deploy staging
+        if: contains( github.ref, 'release/' )
+        run: BUCKET_NAME=nightly.mranjbar.ir AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} npm run deploy-aws
+
+      - name: aws deploy nighly
         if: contains( github.ref, 'develop' )
         run: BUCKET_NAME=nightly.mranjbar.ir AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} npm run deploy-aws
 
