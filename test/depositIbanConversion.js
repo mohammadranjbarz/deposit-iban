@@ -1,7 +1,7 @@
 const assert = require('assert');
 const utils = require('../dist/index').util
 const {getBankFromCode} = require('../dist/index')
-const depositCardIbanData = require('./depositCardIbanData')
+const depositCardIbanData = require('./depositCardIbanData').depositIbanMapping
 
 
 describe('convertDepositToIban', function() {
@@ -16,14 +16,14 @@ describe('convertDepositToIban', function() {
   })
 });
 
-describe('convertDepositToIban wrong ibans', function() {
+describe('convertDepositToIban invalid ibans', function() {
   depositCardIbanData.forEach(item => {
     it(`bank ${item.bankName}` , () => {
       if (item.testShouldNotPass){
         return;
       }
       const bank = getBankFromCode(item.bankCode)
-      assert.notEqual(bank.convertDepositToIban(item.deposit), item.wrongIban);
+      assert.notEqual(bank.convertDepositToIban(item.deposit), item.invalidIban);
     });
   })
 });

@@ -102,3 +102,4 @@ export const isIbanValid = utils.isValidIban
 
 
 export {getBankCodeFromCardNumber} from './utils'
+export {isCardValid} from './cardUtils'
