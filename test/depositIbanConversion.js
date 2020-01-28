@@ -1,7 +1,7 @@
 const assert = require('assert');
-const utils = require('../../dist/index').util
-const {getBankFromCode} = require('../../dist/index')
-const depositCardIbanData = require('../depositCardIbanData')
+const utils = require('../dist/index').util
+const {getBankFromCode} = require('../dist/index')
+const depositCardIbanData = require('./depositCardIbanData')
 
 
 describe('convertDepositToIban', function() {

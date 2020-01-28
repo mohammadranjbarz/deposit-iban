@@ -1,7 +1,7 @@
 const assert = require('assert');
-const utils = require('../../dist/index').util
+const utils = require('../dist/index').util
 
-const depositCardIbanData = require('../depositCardIbanData')
+const depositCardIbanData = require('./depositCardIbanData')
 
 describe('testing isValidIban function mellat iban', function() {
     it('iban is invalid', () => {
