@@ -16,6 +16,18 @@ describe('convertDepositToIban', function() {
   })
 });
 
+describe('convertDepositToIban wrong ibans', function() {
+  depositCardIbanData.forEach(item => {
+    it(`bank ${item.bankName}` , () => {
+      if (item.testShouldNotPass){
+        return;
+      }
+      const bank = getBankFromCode(item.bankCode)
+      assert.notEqual(bank.convertDepositToIban(item.deposit), item.wrongIban);
+    });
+  })
+});
+
 
 describe('convertIbanToDeposit', function() {
   depositCardIbanData.forEach(item => {
