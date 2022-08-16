@@ -47,7 +47,7 @@ const bankCardNumberMapping: {
   '589210':BANK_CODES.SEPAH,
   '504706':BANK_CODES.SHAHR,
   '628023':BANK_CODES.MASKAN,
-  '58594710':BANK_CODES.KHAVAR_MIANE,
+  '585947':BANK_CODES.KHAVAR_MIANE,
 }
 
 export function addPadString(originalString: string, padString: string, length: number): string {

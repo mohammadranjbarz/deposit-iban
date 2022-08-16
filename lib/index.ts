@@ -32,7 +32,11 @@ const iranZamin = new BankTypeOne(BANK_CODES.IRAN_ZAMIN);
 const parsian = new BankTypeOne(BANK_CODES.PARSIAN);
 const shahr = new Shahr(BANK_CODES.SHAHR);
 const maskan = new Maskan(BANK_CODES.MASKAN);
+
+// We dont know the formula for khavar miane so we just added an adapter to not get error
+// when running khavarmiane
 const khavarmiane = new Maskan(BANK_CODES.KHAVAR_MIANE);
+
 export const util = utils
 export  { BANK_CODES}
 export const getBankFromCode = (bankCode: String) : AbstractBank=> {
